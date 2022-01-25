@@ -28,7 +28,6 @@
                     echo'<img src="'.HOME_URL. 'Views/img/icon-heart.svg" alt="">';
                 }
                 ?>
-                
             </div>
             <div class="like-count js-like-count"><?php echo htmlspecialchars($view_tweet['like_count']); ?></div>
         </div>

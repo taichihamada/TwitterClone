@@ -39,7 +39,6 @@ include_once('../util.php');
 
                 <!--仕切りエリア-->
                 <div class="ditch"></div>
-
             </div>
         </div>
     </div>

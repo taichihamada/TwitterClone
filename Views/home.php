@@ -57,6 +57,7 @@ $view_tweets = [
         <div class="main">
             <div class="main-header">
                 <h1>ホーム</h1>
+            </div>
 
                 <!-- つぶやき投稿エリア-->
                 <div class="tweet-post">
@@ -86,10 +87,9 @@ $view_tweets = [
                         <div class="tweet-list">
                         <?php foreach($view_tweets as $view_tweet): ?>
                             <?php include('../Views/common/tweet.php'); ?>
-                        <?php endforeach; ?>    
+                        <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
-            </div>
         </div>
     </div>
     <?php include_once('../Views/common/foot.php'); ?>
