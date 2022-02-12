@@ -21,7 +21,7 @@ function createUser(array $data)
     }
 
     // 新規登録のSQLクエリを作成
-    $query = 'INSERT INTO users (email, name, nickname, password) VALUES (?,?,?,?)';
+    $query = 'INSERT INTO users (email, name, nickname, password) VALUES (?, ?, ?, ?)';
 
     // プリペアドステートメントに、作成したクエリを登録
     $statement = $mysqli->prepare($query);
@@ -37,7 +37,7 @@ function createUser(array $data)
 
     // 実行に失敗した場合->エラー表示
     if ($response === false) {
-        echo 'エラーメッセージ：' .$mysqli->error . "\n";
+        echo 'エラーメッセージ：' . $mysqli->error . "\n";
     }
 
     // DB接続を解放
@@ -76,7 +76,7 @@ function updateUser(array $data)
     // -----------------------------
     // SET句のカラムを準備
     $set_columns = [];
-    foreach([
+    foreach ([
         'name', 'nickname', 'email', 'password', 'image_name', 'updated_at'
     ] as $column) {
         // 入力があれば、更新の対象にする
@@ -116,13 +116,13 @@ function updateUser(array $data)
  * @param string $password
  * @return array|false
  */
-function findUserAndCheckPassword(string $email,string $password)
+function findUserAndCheckPassword(string $email, string $password)
 {
     //DB接続
     $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
     // 接続エラーがある場合->処理停止
-    if($mysqli->connect_errno){
+    if ($mysqli->connect_errno){
         echo 'MySQLの接続に失敗しました。：' .$mysqli->connect_error . "\n";
         exit;
     }
