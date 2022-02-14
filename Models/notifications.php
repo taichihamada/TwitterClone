@@ -68,7 +68,7 @@ function findNotifications(int $user_id)
     }
 
     //エスケープ
-    $user_id = $mysqli ->real_escape_string($user_id);
+    $user_id = $mysqli ->real_escape_string($follow_user_id);
 
     // ----------------------------------------
     // SQLを作成（検索）
